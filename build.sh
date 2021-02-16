@@ -24,6 +24,14 @@ wget https://github.com/google/ngx_brotli/archive/v1.0.0rc.zip
 unzip v1.0.0rc.zip
 rm v1.0.0rc.zip
 mv ngx_brotli-1.0.0rc ngx_brotli
+wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.zip
+unzip OpenSSL_1_1_1d.zip
+rm OpenSSL_1_1_1d.zip
+mv openssl-OpenSSL_1_1_1d openssl-1.1.1d
+cd ngx_pagespeed-1.13.35.2
+wget https://dl.google.com/dl/page-speed/psol/1.13.35.2-x64.tar.gz
+tar xzf 1.13.35.2-x64.tar.gz
+rm 1.13.35.2-x64.tar.gz
 cd $project_path
 ./configure\
   --prefix=/etc/nginx\
