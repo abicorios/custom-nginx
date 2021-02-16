@@ -20,10 +20,11 @@ wget https://github.com/apache/incubator-pagespeed-ngx/archive/v1.13.35.2-stable
 unzip v1.13.35.2-stable.zip
 rm v1.13.35.2-stable.zip
 mv incubator-pagespeed-ngx-1.13.35.2-stable ngx_pagespeed-1.13.35.2
-wget https://github.com/google/ngx_brotli/archive/v1.0.0rc.zip
-unzip v1.0.0rc.zip
-rm v1.0.0rc.zip
-mv ngx_brotli-1.0.0rc ngx_brotli
+git clone https://github.com/google/ngx_brotli
+cd ngx_brotli
+git checkout tags/v1.0.0rc
+git submodule update --init
+cd $modules_path
 wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1d.zip
 unzip OpenSSL_1_1_1d.zip
 rm OpenSSL_1_1_1d.zip
