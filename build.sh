@@ -4,6 +4,7 @@ tar xzf nginx-1.16.1.tar.gz
 cd nginx-1.16.1
 project_path=$PWD
 cd src/http/modules
+modules_path=$PWD
 wget https://github.com/wandenberg/nginx-push-stream-module/archive/0.4.1.zip
 unzip 0.4.1.zip
 rm 0.4.1.zip
@@ -39,7 +40,7 @@ cd $project_path
   --http-scgi-temp-path=/var/cache/nginx/scgi_temp\
   --user=nginx\
   --group=nginx\
-  --with-openssl=/builddir/build/BUILD/bx-nginx-1.16.1/openssl-1.1.1d\
+  --with-openssl=$modules_path/openssl-1.1.1d\
   --with-openssl-opt=enable-tls1_3\
   --with-http_ssl_module\
   --with-http_realip_module\
@@ -59,10 +60,10 @@ cd $project_path
   --with-mail_ssl_module\
   --with-file-aio\
   --with-ipv6\
-  --add-module=/builddir/build/BUILD/bx-nginx-1.16.1/nginx-push-stream-module-0.4.1\
-  --add-module=/builddir/build/BUILD/bx-nginx-1.16.1/ngx_mod_zip-1.1.6\
-  --add-module=/builddir/build/BUILD/bx-nginx-1.16.1/headers-more-nginx-module\
-  --add-module=/builddir/build/BUILD/bx-nginx-1.16.1/ngx_pagespeed-1.13.35.2\
-  --add-module=/builddir/build/BUILD/bx-nginx-1.16.1/ngx_brotli\
+  --add-module=$modules_path/nginx-push-stream-module-0.4.1\
+  --add-module=$modules_path/ngx_mod_zip-1.1.6\
+  --add-module=$modules_path/headers-more-nginx-module\
+  --add-module=$modules_path/ngx_pagespeed-1.13.35.2\
+  --add-module=$modules_path/ngx_brotli\
   --with-cc-opt='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic'\
   --with-debug
