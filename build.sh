@@ -75,4 +75,5 @@ cd $project_path
   --add-module=$modules_path/ngx_pagespeed-1.13.35.2\
   --add-module=$modules_path/ngx_brotli\
   --with-cc-opt='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic'\
-  --with-debug
+  --with-debug\
+&& make
