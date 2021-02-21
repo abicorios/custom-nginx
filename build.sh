@@ -34,7 +34,7 @@ wget https://dl.google.com/dl/page-speed/psol/1.13.35.2-x64.tar.gz
 tar xzf 1.13.35.2-x64.tar.gz
 rm 1.13.35.2-x64.tar.gz
 cd $project_path
-./configure\
+yes | ./configure\
   --prefix=/etc/nginx\
   --sbin-path=/usr/sbin/nginx\
   --conf-path=/etc/nginx/nginx.conf\
