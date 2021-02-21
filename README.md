@@ -17,3 +17,10 @@ debug-level logging you can use the Release binaries.
 Use the available Release binaries? [Y/n]
 ```
 Enter `y`.
+
+# refs
+Thank you:
+
+https://fornex.com/help/install-pagespeed-nginx-centos/
+
+https://github.com/smartfile/nginx-mod-zip
