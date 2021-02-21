@@ -8,10 +8,10 @@ modules_path=$PWD
 wget https://github.com/wandenberg/nginx-push-stream-module/archive/0.4.1.zip
 unzip 0.4.1.zip
 rm 0.4.1.zip
-wget https://github.com/evanmiller/mod_zip/archive/1.1.6.zip
-unzip 1.1.6.zip
-rm 1.1.6.zip
-mv mod_zip-1.1.6 ngx_mod_zip-1.1.6
+wget https://github.com/evanmiller/mod_zip/archive/1.2.0.zip
+unzip 1.2.0.zip
+rm 1.2.0.zip
+mv mod_zip-1.2.0 ngx_mod_zip-1.2.0
 wget https://github.com/openresty/headers-more-nginx-module/archive/v0.33.zip
 unzip v0.33.zip
 rm v0.33.zip
@@ -70,7 +70,7 @@ cd $project_path
   --with-file-aio\
   --with-ipv6\
   --add-module=$modules_path/nginx-push-stream-module-0.4.1\
-  --add-module=$modules_path/ngx_mod_zip-1.1.6\
+  --add-module=$modules_path/ngx_mod_zip-1.2.0\
   --add-module=$modules_path/headers-more-nginx-module\
   --add-module=$modules_path/ngx_pagespeed-1.13.35.2\
   --add-module=$modules_path/ngx_brotli\
