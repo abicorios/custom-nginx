@@ -13,13 +13,23 @@ Also, you can use splitter to see output of `nginx -V` https://abicorios.github.
 
 # usage
 
-You can rename the standard file `/usr/sbin/nginx` to save it, and add the symlink to the built binary, for example:
+You need save the standard file `/usr/sbin/nginx`, and add the symlink on the built binary, for example:
 ```bash
-cd /usr/sbin/nginx
-mv nginx{,.b}
-ln -s /home/bitrix/custom-nginx/nginx-1.16.1/objs/nginx
-service nginx restart
+cd /usr/sbin
+cp nginx{,.bac}
+ln -s /home/bitrix/custom-nginx/nginx-1.16.1/objs/nginx nginx.custom
 ```
+You need do it manually, to understand what do you do.
+
+Then, if you need use new custom nginx, run by root (sudo or login as root):
+```bash
+./set_custom_nginx.sh
+```
+To come back default nginx, run by root:
+```bash
+./set_default_nginx.sh
+```
+These scripts use names `nginx.bac` and `nginx.custom`, so you need use these names of backup and symlink.
 
 If you need use the debug log, you can find the configs which contain `var_log`:
 ```bash
